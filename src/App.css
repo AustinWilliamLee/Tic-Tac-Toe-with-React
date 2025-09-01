@@ -6,6 +6,90 @@
   height: 40vmin;
   pointer-events: none;
 }
+.game{
+  display: flex;
+  justify-self: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #74edb5 0%, #ACB6E5 100%) ;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.game-board {
+  margin-right: 50px;
+}
+.game-info {
+  font-size: 18px;
+  color: #333;
+}
+.status {
+  margin-bottom: 15px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #222;
+  text-align: center;
+}
+.board-row {
+  display: flex;
+}
+.square {
+  width: 90px;
+  height: 90px;
+  background: #fff;
+  border: 2px solid #333;
+  font-size: 42px;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  transition: background 0.2s, transform 0.1s, box-shadow 0.2s;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+.square:hover {
+  background: #f1f1f1;
+  transform: scale(1.04);
+}
+.square:active {
+  transform: scale(0.98);
+}
+.game-info button {
+  background: #61dafb;
+  border: none;
+  padding: 8px 12px;
+  margin: 6px 0;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.game-info button:hover {
+  background: #21a1f1;
+  color: #fff;
+}
+.game-info ol {
+  padding-left: 0;
+}
+.game-info {
+  list-style: none;
+}
+.winner-line {
+  position: absolute;
+  background: red;
+  height: 4px;
+  border-radius: 2px;
+}
+
+.winner-line-012 { top: 50px; left: 0; width: 100%; }   /* top row */
+.winner-line-345 { top: 150px; left: 0; width: 100%; }  /* middle row */
+.winner-line-678 { top: 250px; left: 0; width: 100%; }  /* bottom row */
+
+.winner-line-036 { left: 50px; top: 0; height: 100%; width: 4px; }   /* left col */
+.winner-line-147 { left: 150px; top: 0; height: 100%; width: 4px; }  /* middle col */
+.winner-line-258 { left: 250px; top: 0; height: 100%; width: 4px; }  /* right col */
+
+.winner-line-048 { transform: rotate(45deg); top: 0; left: 0; width: 100%; }  /* diagonal \ */
+.winner-line-246 { transform: rotate(-45deg); top: 0; right: 0; width: 100%; } /* diagonal / */
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
